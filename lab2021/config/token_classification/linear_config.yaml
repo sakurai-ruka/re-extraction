@@ -1,0 +1,17 @@
+#data_root: /home/mtakahashi/work/lab2021/data/token_classification
+data_root: /home/sakurai/git2/lab2021/data/token_classification
+output_dir: /home/sakurai/git2/lab2021/experiments/result
+exp_name: token_classification
+model_names: linear
+# pretrained: /home/mtakahashi/work/lab2021/experiments/result/token_classification/linear_aboid/checkpoints/epoch=15-val_loss=0.554.ckpt
+seed: 42
+dataset_params:
+  train_batchsize: 4
+  val_batchsize: 2
+model:
+  should_freeze_bert_model: True
+  n_workers: 20
+trainer:
+  gpus: [0]
+  max_epochs: 30
+  log_every_n_steps: 100
